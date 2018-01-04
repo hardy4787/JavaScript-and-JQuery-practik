@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style></style>
+</head>
+<body>
+	<p>Число 1: <input type="text" name="" id="n1"></p>
+	<p>Число 2: <input type="text" name="" id="n2"></p>
+
+	<button>+</button>
+	<button>-</button>
+	<button>*</button>
+
+	<hr>
+
+	<p id="out">Ответ: </p>
+</body>
+	<script>
+		var button = document.getElementsByTagName("button");
+		for(var i = 0; i < button.length; i++){
+			button[i].onclick = function(){
+				var num1, num2, result;
+				num1 = document.getElementById("n1").value;
+				num1 = parseInt(num1);
+				num2 = document.getElementById("n2").value;
+				num2 = parseInt(num2);
+				switch(this.innerHTML){
+					case '+':
+						result = num1 + num2;
+						break;
+					case '-':
+						result = num1 - num2;
+						break;
+					case '*':
+						result = num1 * num2;
+						break;
+				}
+				document.getElementById("out").innerHTML = result;
+			}
+			
+		}
+	</script>
+</html>

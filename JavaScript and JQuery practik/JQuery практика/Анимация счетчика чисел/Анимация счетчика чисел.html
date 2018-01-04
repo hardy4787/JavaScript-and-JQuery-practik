@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<style>
+		body {
+			font-family: Arial;
+			padding:25px;
+			background-color: #f5f5f5;
+			color: #808080;
+			text-align: center;
+		}
+		.col-fourth {
+			width: 23.5%;
+		}
+		.col-fourth {
+			position: relative;
+			display: inline-block;
+			float: left;
+			margin-right: 2%;
+			margin-bottom: 20px;
+		}
+		.end {
+			margin-right: 0 !important;
+		}
+		.wrapper {
+			width: 980px;
+			margin: 30px auto;
+			position: relative;
+		}
+		.counter{
+			background-color: #fff;
+			padding: 20px 0;
+			border-radius: 5px;
+		}
+		.count-text {
+			font-size: 13px;
+			font-weight: normal;
+			margin-top: 10px;
+			margin-bottom: 0;
+			text-align: center;
+		}
+		.fa-2x {
+			margin: 0 auto;
+			float: none;
+			display: table;
+			color: #4ad1e5;
+		}
+	</style>
+</head>
+<body>
+	<h1>jQuery number animation</h1>
+	<div class="wrapper">
+		<div class="counter col-fourth">
+			<i class="fa fa-code fa-2x"></i>
+			<h2 class="count">3435</h2>
+			<p class="count-text">Text</p>
+		</div>
+		<div class="counter col-fourth">
+			<i class="fa fa-coffee fa-2x"></i>
+			<h2 class="count">3435</h2>
+			<p class="count-text">Text</p>
+		</div>
+		<div class="counter col-fourth">
+			<i class="fa fa-lightbulb-o fa-2x"></i>
+			<h2 class="count">3435</h2>
+			<p class="count-text">Text</p>
+		</div>
+		<div class="counter col-fourth end">
+			<i class="fa fa-bug fa-2x"></i>
+			<h2 class="count">34352</h2>
+			<p class="count-text">Text</p>
+		</div>
+	</div>
+
+</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script>
+
+		$('.count').each(function() {
+			$(this).prop('Counter',0).animate({
+				Counter:$(this).text()
+			},{
+				duration: 4000,
+				easing: 'swing',
+				step:function(now){
+					$(this).text(Math.ceil(now));
+				}
+			});
+		});
+	</script>
+</html>
