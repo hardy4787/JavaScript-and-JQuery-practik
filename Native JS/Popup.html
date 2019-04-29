@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.popup {
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+			margin: 50px;
+		}
+		.popup .popuptext {
+			visibility: hidden;
+			width: 160px;
+			background-color: #555;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 8px 0;
+			position: absolute;
+			z-index: 1;
+			bottom: 125%;
+			left: 50%;
+			margin-left: -80px;
+		}
+		.popup .popuptext::after{
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border: 5px solid #555;
+		}
+		.popup .show {
+			visibility: visible;
+			-webkit-animation: fadeIn 1s;
+			-webkit-animation: fadeIn 1s;
+			-o-animation: fadeIn 1s;
+			animation: fadeIn 1s;
+		}
+		@-webkit-keyframes fadeIn {
+			from{opacity:0;}
+			to{opacity:1;}
+		}
+		@keyframes fadeIn {
+			from{opacity:0;}
+			to{opacity:1;}
+		}
+	</style>
+</head>
+<body>
+	<div class="popup" onclick="myFunction()">Click me!
+	<span class="popuptext" id="myPopup">Lorem ipsum dolor sit amet, consectetur</span>
+	</div>
+</body>
+	<script>
+		function myFunction(){
+			var popup = document.getElementById('myPopup');
+			popup.classList.toggle('show');
+		}
+	</script>
+</html>

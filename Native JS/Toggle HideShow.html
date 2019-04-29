@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#myDiv {
+			width: 100%;
+			padding: 50px 0;
+			text-align: center;
+			background-color: green;
+			margin-top: 20px;
+		}
+		.alert {
+			padding: 20px;
+			background-color: #f44336;
+			color: #fff;
+			opacity: 1;
+			transition: opacity 0.6s;
+			margin-bottom: 15px;
+		}
+		.alert.success {
+			background-color: #4CAF50;
+		}
+		.alert.info {
+			background-color: #2196F3;
+		}
+		.alert.warning {
+			background-color: #ff9800;
+		}
+		.closebtn {
+			margin-left: 15px;
+			color: white;
+			font-weight: bold;
+			float: right;
+			font-size: 22px;
+			line-height: 20px;
+			cursor: pointer;
+			transition: .3s;
+		}
+		.closebtn:hover {
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	
+	<button onclick="myFunction()">
+		Click
+	</button>
+	<div id="myDiv">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, quibusdam cupiditate. Assumenda incidunt vel veritatis?
+	</div>
+	<div class="alert">
+		<span class="closebtn">&times;</span>
+		<strong>Danger</strong>
+	</div>
+	<div class="alert success">
+		<span class="closebtn">&times;</span>
+		<strong>Success</strong>
+	</div>
+	<div class="alert info">
+		<span class="closebtn">&times;</span>
+		<strong>Information</strong>
+	</div>
+	<div class="alert warning">
+		<span class="closebtn">&times;</span>
+		<strong>Warning</strong>
+	</div>
+</body>
+	<script>
+		function myFunction() {
+			var x = document.getElementById("myDiv");
+			if (x.style.dispaly === 'none') {
+				x.style.display = 'block';
+			} else {
+				x.style.display = 'none';
+			}
+		}
+
+		var close = document.getElementsByClassName("closebtn");
+		for (var i = 0; i < close.length; i++) {
+			close[i].onclick = function() {
+				var div = this.parentElement;
+				div.style.opacity = '0';
+				setTimeout(function() {
+					div.style.display = "none";
+				},600);
+			}
+		}
+	</script>
+</html>
